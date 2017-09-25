@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.hello {
+    width: 100%;
+
+    .world {
+    	display: flex;
+        background-color: red;
+    }
+
+    .me {
+    	display: block;
+    }
+}
