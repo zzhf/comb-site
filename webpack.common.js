@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 module.exports = {
     entry: {
@@ -27,36 +27,9 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        { loader: 'css-loader', options: { importLoaders: 1,  minimize: true } },
-                        'postcss-loader'
-                    ]
-                })
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        { 
-                            loader: 'css-loader', 
-                            options: { 
-                                importLoaders: 1,  
-                                minimize: true 
-                            } 
-                        },//将 CSS 转化成 CommonJS 模块
-                        'postcss-loader',
-                        'sass-loader',//将 Sass 编译成 CSS
-                    ]
-                }),
-            },
-            {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
+                    'url-loader'
                 ],
             },
             {
@@ -77,12 +50,6 @@ module.exports = {
             verbose: true,// 是否输出日志到控制台
             dry: true // 是否全部都删除
         }),
-
-        /*
-         * 提取css
-         */
-        new ExtractTextPlugin('[name]-[contenthash].css'),
-
         /*
          * 页面模板
          **/
@@ -92,9 +59,9 @@ module.exports = {
             filename: __dirname + '/dist/index.html',
             favicon: './favicon.png',
             //html模板
-            // template: './template.html',
+            template: __dirname + '/src/pages/index/index.html',
             //js插入的位置，true/'head'  false/'body'
-            inject: true,
+            inject: 'body',
             //指定页面引入的chunk,默认为所有entry中的chunk
             chunks: ['vendor', 'app'],
             //是否为引入的chunks增加hash,引导浏览器正确的缓存文件
