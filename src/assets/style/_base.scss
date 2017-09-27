@@ -1,0 +1,84 @@
+//颜色变量配置
+$white: #fff !default;
+$blue: #007bff !default;
+$pink: #e83e8c !default;
+$red: #dc35e5 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+
+//常用black颜色配置--文字颜色等
+$black-base: #000 !default;
+$black-light: lighten($black-base, 33.3%) !default;
+$black-lighter: lighten($black-base, 66.6%) !default;
+
+//页面基本颜色配置
+$body-bg: #eeeeee !default;
+$body-color: $black-light !default;
+
+//超链接相关配置
+$link-color: $blue;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+//字体配置
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+//字体大小配置
+$font-size-base: 1rem !default;
+$font-size-lg: 1.25rem !default;
+$font-size-big: 1.5rem !default;
+$font-size-sm: .875rem !default;
+$font-size-tiny: .5rem !default;
+
+//标题变量配置
+$h1-font-size: 2.5rem !default;
+$h2-font-size: 2rem !default;
+$h3-font-size: 1.75rem !default;
+$h4-font-size: 1.5rem !default;
+$h5-font-size: 1.25rem !default;
+
+//关键项zindex配置
+$zindex-navbar: 2000 !default;
+$zindex-navbar-fixed: 2020 !default;
+$zindex-modal-bg: 2040 !default;
+$zindex-modal: 2060 !default;
+$zindex-fixed: 2050 !default;
+
+//基本过度配置
+$transition-base: all .3s ease-in-out !default;
+$transition-fade: opacity .2s linear !default;
+
+.fixed-base: {
+	position: fixed;
+	z-index: $zindex-fixed;
+}
+
+.fixed-top: {
+	@extend .fixed-base;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.fixed-bottom: {
+	@extend .fixed-base;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.fixed-left: {
+	@extend .fixed-base;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.fixed-right: {
+	@extend .fixed-base;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
