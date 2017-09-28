@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         vendor: ['jquery', 'lodash'],
-        app: './src/index.js'
+        app: './src/pages/index/index.js'
     },
     output: {
         filename: '[name].[chunkhash].js',
