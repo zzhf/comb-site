@@ -1,3 +1,115 @@
 @import 'normalize.scss';
 @import 'base.scss';
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body-bg;
+    color: $black-base;
+}
+
+.nav-wrap {
+    @extend .clearfix;
+    position: relative;
+    width: 100%;
+    background-color: #078ab7;
+}
+
+// .navbar {
+//     position: absolute;
+//     margin: 0 auto;
+//     margin-bottom: 10px;
+    
+//     .logo {
+//         float: left;
+//     }
+
+//     .nav {
+//         @extend .clearfix;
+//         list-style: none;
+//         position: relative;
+//         display: block;
+//         overflow: hidden;
+//         float: left;
+//         margin: 0;
+//         padding-left: 0;
+
+//         &>li {
+//             float: left;
+//             position: relative;
+//             display: block;
+
+//             a {
+                
+
+//                 &:hover {
+//                     margin-top: -5px;
+//                     text-decoration: underline;
+//                     opacity: .8;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.nav {
+    position: relative;
+    width: 100%;
+    background-color: #078ab7;
+
+    .navbar {
+        @extend .clearfix;
+        position: relative;
+        margin: 0 auto;
+        max-width: 1200px;
+
+        .logo {
+            position: relative;
+            float: left;
+        }
+
+        ul {
+            float: right;
+            list-style: none;
+            position: relative;
+            display: block;
+            margin: 0;
+            padding-left: 0;
+            
+            &>li {
+                float: left;
+                position: relative;
+                display: block;
+
+                a {
+                    position: relative;
+                    display: block;
+                    line-height: 4;
+                    padding: 0 15px;
+                    text-decoration: none;
+                    transition: $transition-base;
+
+                    &:hover {
+                        margin-top: -5px;
+                        text-decoration: underline;
+                        opacity: .8;
+                    }
+                }
+            }
+
+            .active {
+                &:after {
+                    position: absolute;
+                    border: 0;
+                    content: ' ';
+                    width: 100%;
+                    height: 3px;
+                    margin-bottom: -2px;
+                    border-top: 3px solid #a2a208;
+                }
+            }
+        }
+    }
+}
