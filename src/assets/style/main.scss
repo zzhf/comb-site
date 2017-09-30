@@ -14,7 +14,7 @@ body {
     @extend .clearfix;
     position: relative;
     width: 100%;
-    background-color: #078ab7;
+    background-color: $nav-bg;
 }
 
 .nav {
@@ -65,7 +65,6 @@ body {
                     &:hover {
                     	color: $yellow;
                         margin-top: -3px;
-                        // text-decoration: underline;
                         opacity: .8;
                     }
                 }
