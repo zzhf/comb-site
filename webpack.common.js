@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        vendor: ['jquery', 'lodash'],
+        vendor: ['jquery'],
         app: './src/pages/index/index.js'
     },
     output: {
@@ -29,7 +29,7 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'url-loader'
+                    'url-loader?limit=5000&name=[name]-[hash].[ext]'
                 ],
             },
             {
@@ -37,6 +37,10 @@ module.exports = {
                 use: [
                     'xml-loader'
                 ],
+            },
+            {
+                test: /\.(woff|woff2|svg|eot|ttf)$/i,
+                loader: 'file-loader?name=fonts/limit=5000&name=[name]-[hash].[ext]'
             }
         ]
     },
@@ -45,10 +49,10 @@ module.exports = {
          * clean publishing directory
          * （发布前清空发布目录）
          * */
-        new CleanWebpackPlugin('[dist]', {
+        new CleanWebpackPlugin('dist', {
             root: '', //webpack.config.js文件的绝对路径
             verbose: true,// 是否输出日志到控制台
-            dry: true // 是否全部都删除
+            // dry: true // 是否全部都删除
         }),
         /*
          * 页面模板

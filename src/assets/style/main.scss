@@ -1,6 +1,7 @@
 @import 'normalize.scss';
 @import 'base.scss';
 
+
 * {
     box-sizing: border-box;
 }
@@ -8,6 +9,22 @@
 body {
     background-color: $body-bg;
     color: $black-base;
+}
+
+.header {
+    position: relative;
+    font-family: 'Pacifico', 'Helvetica', 'Tahoma', 'Arial';
+    text-align: center;
+    font-size: 3.5em;
+    background-image: url('./../images/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e6e6e6;
+
+    p {
+        margin: 0;
+        padding: 4.25em 0;
+    }
 }
 
 .nav-wrap {

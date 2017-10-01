@@ -52,6 +52,15 @@ $zindex-fixed: 2050 !default;
 $transition-base: all .3s ease-in-out !default;
 $transition-fade: opacity .2s linear !default;
 
+@font-face {
+	font-family: 'Pacifico';
+	src: url('./../fonts/Pacifico/Pacifico.woff') format('woff2'),
+		 url('./../fonts/Pacifico/Pacifico.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+//工具类
 .fixed-base {
 	position: fixed;
 	z-index: $zindex-fixed;
