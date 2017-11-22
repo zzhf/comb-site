@@ -1,1 +1,0 @@
-webpackJsonp([0],[,,function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),n(3);var u=n(0),f=o(u),d=n(4),i=o(d),a={init:function(){(0,f.default)("#logo").attr("src",i.default)}};a.init(),t.default=a},function(e,t){},function(e,t,n){e.exports=n.p+"logo-4ca409f9e3b42e9de913a7d04db846fd.png"}],[2]);
